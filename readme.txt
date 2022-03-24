@@ -1,0 +1,1 @@
+使用的技术有，java，mysql,jsp,servlet,html,css,javascript,jquery,echart等。

@@ -1,0 +1,404 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : 127.0.0.1
+ Source Server Type    : MySQL
+ Source Server Version : 80013
+ Source Host           : localhost:3306
+ Source Schema         : olp
+
+ Target Server Type    : MySQL
+ Target Server Version : 80013
+ File Encoding         : 65001
+
+ Date: 21/03/2022 19:31:26
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for admin
+-- ----------------------------
+DROP TABLE IF EXISTS `admin`;
+CREATE TABLE `admin`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '用户表主键',
+  `usercode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户编码',
+  `username` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名（登录名）',
+  `password` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
+  `role` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '角色（1=管理员，2=教师，3=学生）',
+  `real_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户真实姓名',
+  `class_and_grade` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '年级和班级等',
+  `sex` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '性别（1=男，2=女，3=未知）',
+  `age` int(10) NULL DEFAULT NULL COMMENT '年龄',
+  `mail` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '邮箱',
+  `phone` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '电话号码',
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '住址',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of admin
+-- ----------------------------
+INSERT INTO `admin` VALUES (26, '20211226144028570', 'admin', 'admin', '1', '管理员', '管理员', '3', 0, '666666@qq.com', '188888888', '北京市', '管理员', '2021-12-26 14:40:28', '', NULL, NULL);
+INSERT INTO `admin` VALUES (27, '20211226144207859', 'zs', 'zs', '2', '张三', '软件工程1班', '1', 37, '33366666@qq.com', '1688888888', '上海市', NULL, '2021-12-26 14:42:07', '', NULL, NULL);
+INSERT INTO `admin` VALUES (28, '20211226144515124', 'lisi', 'lisi', '2', '李四', '网络工程1班', '1', 33, '6667788@qq.com', '1782222222', '北京市', NULL, '2021-12-26 14:45:15', '', NULL, NULL);
+INSERT INTO `admin` VALUES (29, '20211226144650434', 'wangwu', 'wangwu', '2', '王五', '物联网工程1班', '2', 47, '666666@qq.com', '17888888888', '广州市', NULL, '2021-12-26 14:46:50', '', NULL, NULL);
+INSERT INTO `admin` VALUES (30, '20211226144835239', 'zhaoliu', 'zhaoliu', '2', '赵六', '计算机技术1班', '2', 55, '6663322@qq.com', '178999999', '重庆市', NULL, '2021-12-26 14:48:35', '', NULL, NULL);
+INSERT INTO `admin` VALUES (31, '20211226145022827', 'zsf', 'zsf', '3', '张三丰', '软件工程1班', '1', 19, '666998@qq.com', '1799999999', '北京市', NULL, '2021-12-26 14:50:22', '', NULL, NULL);
+INSERT INTO `admin` VALUES (32, '20211226145129124', 'zm', 'zm', '3', '赵敏', '物联网工程1班', '2', 19, '6668899@qq.com', '138888888', '北京市', NULL, '2021-12-26 14:51:29', '', NULL, NULL);
+INSERT INTO `admin` VALUES (33, '20211226145250668', 'zwj', 'zwj', '3', '张无忌', '软件工程1班', '1', 21, '36666@qq.com', '17988888888', '北京市', NULL, '2021-12-26 14:52:50', '', NULL, NULL);
+INSERT INTO `admin` VALUES (34, '20211226152133567', 'yg', 'yg', '3', '杨过', '软件工程1班', '1', 20, '1233665@qq.com', '138666666666', '北京市', NULL, '2021-12-26 15:21:33', '', NULL, NULL);
+INSERT INTO `admin` VALUES (36, '20211226194712051', 'xln', 'xln', '3', '小龙女', '网络工程1班', '2', 20, '6336666@qq.com', '17899999999', '北京市', NULL, '2021-12-26 19:47:12', '', NULL, NULL);
+INSERT INTO `admin` VALUES (40, '20220105194542365', 'xx', 'xx', '3', 'xx', 'xx', '1', 10, 'xx', 'xx', 'xx', NULL, '2022-01-05 19:45:42', '', NULL, NULL);
+INSERT INTO `admin` VALUES (41, '20220105195823937', 'aa', 'aa', '3', 'aa', 'aa', '1', 20, 'aa', 'aa', 'aa', NULL, '2022-01-05 19:58:23', '', NULL, NULL);
+INSERT INTO `admin` VALUES (43, '20220106185453053', 'qq', 'qq', '3', 'qq', 'qq', '1', 20, 'qq', 'qq', 'qq', NULL, '2022-01-06 18:54:53', '', NULL, NULL);
+INSERT INTO `admin` VALUES (44, '20220220191950507', '22', '22', '1', '22', '22', '2', 22, '55', '55', '55', NULL, '2022-02-20 19:19:50', '', NULL, NULL);
+INSERT INTO `admin` VALUES (45, '20220314193600731', '6677', '6677', '1', '1', '100', '1', 1, '100', '11', '111', NULL, '2022-03-14 19:36:00', '', NULL, NULL);
+INSERT INTO `admin` VALUES (46, '20220314203555541', '11', '11', '3', '15', '15', '1', 51, '51', '15', '51', NULL, '2022-03-14 20:35:55', '', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for bulletin
+-- ----------------------------
+DROP TABLE IF EXISTS `bulletin`;
+CREATE TABLE `bulletin`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '公告的id',
+  `topic` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '公告的题目',
+  `content` varchar(10000) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '公告的内容',
+  `is_check` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '是否审核（0=未审核，1=已审核）',
+  `create_time` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建时间',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of bulletin
+-- ----------------------------
+INSERT INTO `bulletin` VALUES (3, '放假通知', '周五要放假了', '1', '2022-02-08 20:31:39', '', '', NULL, NULL);
+INSERT INTO `bulletin` VALUES (4, '作业题型', '操作系统的作业要交了，大家要注意了', '1', '2022-02-08 20:33:52', '', '', NULL, NULL);
+INSERT INTO `bulletin` VALUES (9, '学习通知', '放假以后，大家要好好学习', '1', '2022-02-08 21:05:40', '', '', NULL, NULL);
+INSERT INTO `bulletin` VALUES (12, '66', '54', '0', '2022-3-11 22:10:38', '', '', NULL, NULL);
+INSERT INTO `bulletin` VALUES (13, '11', '11', '0', '2022-3-11 22:14:45', '', '', NULL, NULL);
+INSERT INTO `bulletin` VALUES (14, '111', '11', '1', '2022-3-11 22:22:25', '', '', NULL, NULL);
+INSERT INTO `bulletin` VALUES (15, '11', '11', '1', '2022-3-11 22:31:36', '', '', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for chat
+-- ----------------------------
+DROP TABLE IF EXISTS `chat`;
+CREATE TABLE `chat`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '课程讨论表主键',
+  `code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目编码',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目名称',
+  `usercode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '讨论人编码',
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '讨论人名称',
+  `advice` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '讨论人回答',
+  `is_check` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '是否审核（0=未审核，1=已审核）',
+  `create_time` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建时间',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of chat
+-- ----------------------------
+INSERT INTO `chat` VALUES (22, '20211226214917039', '操作系统', '20211226144207859', '张三', '学习操作系统的难度咋样', '1', '2022-01-22 15:12:54', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (24, '20211226214917039', '操作系统', '20211226145129124', '赵敏', '多线程这块很难学习', '1', '2022-01-22 15:17:42', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (26, '20211226214917039', '操作系统', '20211226152133567', '杨过', '3366', '1', '2022-01-22 15:17:59', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (29, '20211226214917039', '操作系统', '20211226144207859', '张三', '好好学习操作系统', '1', '2022-01-22 16:00:27', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (30, '20211226214946554', '数据结构', '20211226144207859', '张三', '666', '1', '2022-01-22 19:05:42', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (31, '20211226214946554', '数据结构', '20211226152133567', '杨过', '6677', '1', '2022-01-22 19:05:53', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (34, '20211226214946554', '数据结构', '20211226152133567', '杨过', '30', '1', '2022-01-22 20:54:28', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (35, '20211226214946554', '数据结构', '20211226152133567', '杨过', '300', '1', '2022-01-22 20:54:45', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (36, '20211226214917039', '操作系统', '20211226152133567', '杨过', '3333', '1', '2022-01-22 20:55:00', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (37, '20211226214917039', '操作系统', '20211226152133567', '杨过', '300000', '1', '2022-01-22 21:02:07', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (45, '20211226215032911', '软件工程', '20211226144207859', '张三', '11111', '1', '2022-01-22 21:28:56', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (46, '20211226215032911', '软件工程', '20211226144207859', '张三', '1225', '1', '2022-01-22 21:29:33', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (47, '20211226215032911', '软件工程', '20211226144207859', '张三', '66666', '1', '2022-01-23 13:37:47', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (48, '20211226215032911', '软件工程', '20211226152133567', '杨过', '00', '1', '2022-02-27 21:50:46', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (49, '20211226215032911', '软件工程', '20211226145129124', '赵敏', '20', '1', '2022-02-27 21:55:02', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (50, '20211226215242626', '算法设计', '20211226144207859', '张三', '11', '1', '2022-03-13 22:07:38', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (52, '20211226214917039', '操作系统', '20211226144207859', '张三', '200', '1', '2022-3-13 22:40:22', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (53, '20211226215242626', '算法设计', '20211226152133567', '杨过', '11', '1', '2022-3-13 22:46:18', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (54, '20211226214917039', '操作系统', '20211226144207859', '张三', '66', '1', '2022-3-13 22:52:00', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (55, '20211226214917039', '操作系统', '20211226144207859', '张三', '66', '0', '2022-3-13 22:52:59', '', '', NULL, NULL);
+INSERT INTO `chat` VALUES (56, '20211226214917039', '操作系统', '20211226144207859', '张三', '11', '1', '2022-3-13 22:55:09', '', '', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for course_result
+-- ----------------------------
+DROP TABLE IF EXISTS `course_result`;
+CREATE TABLE `course_result`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '学生选课表主键',
+  `code` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目编码',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目名称',
+  `user_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '选课人编码',
+  `real_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '选课人姓名',
+  `create_time` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建时间',
+  `is_check` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '是否审核（0=未审核，1=已审核）',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 110 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of course_result
+-- ----------------------------
+INSERT INTO `course_result` VALUES (81, '20211226214917039', '操作系统 ', '20211226145129124', '赵敏', '2022-02-07 21:24:51', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (82, '20211226214946554', '数据结构 ', '20211226145129124', '赵敏', '2022-02-07 21:24:51', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (83, '20211226215004568', '计算机网络 ', '20211226145129124', '赵敏', '2022-02-07 21:24:51', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (84, '20211226215017103', '组成原理 ', '20211226145129124', '赵敏', '2022-02-07 21:24:52', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (85, '20211226215032911', '软件工程 ', '20211226145129124', '赵敏', '2022-02-07 21:24:52', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (86, '20211226215109913', 'JAVA语言 ', '20211226145129124', '赵敏', '2022-02-07 21:24:52', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (87, '20211226215127608', '编译原理 ', '20211226145129124', '赵敏', '2022-02-07 21:24:52', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (88, '20211226215242626', '算法设计 ', '20211226145129124', '赵敏', '2022-02-07 21:24:52', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (98, '20211226214946554', '数据结构 ', '20211226152133567', '杨过', '2022-02-08 19:33:04', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (99, '20211226215017103', '组成原理 ', '20211226152133567', '杨过', '2022-02-08 19:33:04', '1', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (100, '20211226215032911', '软件工程 ', '20211226152133567', '杨过', '2022-02-08 19:33:04', '0', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (101, '20211226215109913', 'JAVA语言 ', '20211226152133567', '杨过', '2022-02-08 19:33:04', '0', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (102, '20211226215127608', '编译原理 ', '20211226152133567', '杨过', '2022-02-08 19:33:04', '0', '', '', NULL, NULL);
+INSERT INTO `course_result` VALUES (104, '20211226214917039', '操作系统 ', '20211226152133567', '杨过', '2022-02-08 19:33:38', '1', '', '', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for exercise_result
+-- ----------------------------
+DROP TABLE IF EXISTS `exercise_result`;
+CREATE TABLE `exercise_result`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '做题结果表主键',
+  `type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '类型(1表示单选题，2表示判断题)',
+  `code` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目编码',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目名称',
+  `user_code` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '做题人编码',
+  `real_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '做题人姓名',
+  `total_score` int(64) NULL DEFAULT NULL COMMENT '题目总分',
+  `score` int(64) NULL DEFAULT NULL COMMENT '实际得分',
+  `create_time` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '创建时间',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of exercise_result
+-- ----------------------------
+INSERT INTO `exercise_result` VALUES (35, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 16, 10, '2022-01-12 22:05:07', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (36, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 16, 10, '2022-01-12 22:05:16', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (37, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 16, 8, '2022-01-12 22:06:19', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (38, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 16, 8, '2022-01-13 19:22:39', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (39, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-13 19:40:44', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (40, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-13 19:41:12', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (41, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-13 19:42:20', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (42, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-13 19:42:23', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (43, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 0, '2022-01-13 20:16:04', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (44, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-13 20:17:32', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (45, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 6, '2022-01-13 20:20:01', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (46, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 8, '2022-01-13 20:20:42', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (47, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 0, '2022-01-13 20:29:04', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (48, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 4, '2022-01-13 20:33:57', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (49, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-01-13 20:34:19', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (50, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-01-13 20:38:25', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (51, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-13 20:40:47', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (52, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-01-13 20:45:15', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (53, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 4, '2022-01-13 20:45:22', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (54, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-01-13 20:45:28', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (55, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-01-13 20:45:56', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (56, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-01-16 21:02:16', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (57, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-01-16 21:02:17', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (58, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-16 21:02:19', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (59, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 4, '2022-01-16 21:02:23', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (60, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-01-16 21:14:20', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (61, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-17 19:49:36', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (63, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-20 18:44:48', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (64, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-01-20 19:29:28', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (65, '1', '20211226214917039', '操作系统', '20211226145129124', '赵敏', 20, 10, '2022-01-20 19:44:47', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (66, '1', '20211226214917039', '操作系统', '20211226145129124', '赵敏', 20, 20, '2022-01-20 19:44:53', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (67, '2', '20211226214917039', '操作系统', '20211226145129124', '赵敏', 8, 4, '2022-01-20 19:44:58', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (68, '2', '20211226214917039', '操作系统', '20211226145129124', '赵敏', 8, 8, '2022-01-20 19:45:03', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (69, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-02-07 19:47:41', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (70, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-02-07 20:06:15', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (71, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 10, '2022-02-08 19:55:58', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (72, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-08 19:59:22', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (73, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 4, '2022-02-08 20:00:30', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (74, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-02-08 20:46:50', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (75, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-12 19:44:27', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (76, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-12 19:48:32', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (77, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-12 19:52:39', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (78, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-12 19:59:16', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (79, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 0, '2022-02-12 20:02:05', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (80, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 0, '2022-02-12 20:02:15', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (81, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 0, '2022-02-12 20:02:26', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (82, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-12 20:03:57', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (83, '1', '20211226214946554', '数据结构', '20211226152133567', '杨过', 10, 10, '2022-02-12 20:04:09', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (84, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-12 20:04:16', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (85, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-12 20:07:06', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (86, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-02-12 20:07:11', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (87, '1', '20211226214946554', '数据结构', '20211226152133567', '杨过', 10, 10, '2022-02-12 20:07:15', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (88, '2', '20211226214946554', '数据结构', '20211226152133567', '杨过', 8, 8, '2022-02-12 20:07:18', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (89, '2', '20211226214946554', '数据结构', '20211226152133567', '杨过', 8, 8, '2022-02-12 20:29:02', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (90, '1', '20211226214946554', '数据结构', '20211226152133567', '杨过', 10, 10, '2022-02-12 20:29:03', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (91, '2', '20211226214917039', '操作系统', '20211226152133567', '杨过', 8, 8, '2022-02-12 20:29:04', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (92, '1', '20211226214917039', '操作系统', '20211226152133567', '杨过', 20, 20, '2022-02-12 20:29:05', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (93, '1', '20211226215109913', 'JAVA语言', '20211226152133567', '杨过', 4, 4, '2022-02-12 21:48:50', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (94, '1', '20211226215109913', 'JAVA语言', '20211226152133567', '杨过', 4, 4, '2022-02-12 21:51:38', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (95, '1', '20211226215109913', 'JAVA语言', '20211226152133567', '杨过', 4, 4, '2022-02-12 21:51:49', '', '', NULL, NULL);
+INSERT INTO `exercise_result` VALUES (96, '1', '20211226215109913', 'JAVA语言', '20211226152133567', '杨过', 4, 4, '2022-02-12 21:56:29', '', '', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for file
+-- ----------------------------
+DROP TABLE IF EXISTS `file`;
+CREATE TABLE `file`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '文件表主键',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文件名称',
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文件存放地址',
+  `pcode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '课程编码',
+  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '1=管理员上传，2=教师上传，3=学生自己上传',
+  `file_type` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '文件类型（1=课件，2=视频，3=未知）',
+  `usercode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '上传者编码',
+  `real_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '上传者姓名',
+  `create_time` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '创建时间',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of file
+-- ----------------------------
+INSERT INTO `file` VALUES (50, 'JAVA后端知识点总结.pdf', 'D:\\test', '20211226214917039', '2', '1', '20211226144207859', '张三', '2022-3-13 20:52:35', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (51, '0307.txt', 'D:\\test', '20211226214917039', '2', '1', '20211226144207859', '张三', '2022-3-13 21:01:56', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (52, '0307.txt', 'D:\\test', '20211226214917039', '2', '1', '20211226144207859', '张三', '2022-3-13 21:04:12', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (56, '0307.txt', 'D:\\test', '20211226214917039', '2', '1', '20211226144207859', '张三', '2022-3-13 21:11:01', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (57, '时间区间选择器.zip', 'D:\\test', '20211226214946554', '2', '2', '20211226144207859', '张三', '2022-3-13 21:12:19', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (58, '0307.txt', 'D:\\test', '20220313211421969', '2', '1', '20211226144207859', '张三', '2022-3-13 21:14:29', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (59, '0307.txt', 'D:\\test', '20211226215109913', '2', '1', '20211226144515124', '李四', '2022-3-13 21:23:31', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (60, 'redis可视化.zip', 'D:\\test', '20211226215127608', '2', '2', '20211226144515124', '李四', '2022-3-13 21:24:03', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (61, '0307.txt', 'D:\\test', '20211226214917039', '3', '1', '20211226152133567', '杨过', '2022-3-13 21:40:47', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (62, '0307.txt', 'D:\\test', '20211226214946554', '3', '3', '20211226152133567', '杨过', '2022-3-13 21:45:22', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (63, '0307.txt', 'D:\\test', '20211226214946554', '3', '3', '20211226144207859', '张三', '2022-3-13 22:00:31', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (64, '0307.pdf', 'D:\\test', '20211226214917039', '2', '1', '20211226144207859', '张三', '2022-3-15 21:20:11', '', '', NULL, NULL);
+INSERT INTO `file` VALUES (65, '0307.doc', 'D:\\test', '20211226214917039', '2', '3', '20211226144207859', '张三', '2022-3-15 21:22:44', '', '', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for judge_question
+-- ----------------------------
+DROP TABLE IF EXISTS `judge_question`;
+CREATE TABLE `judge_question`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '判断题表主键',
+  `pcode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目编码',
+  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '内容',
+  `answer` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '参考答案（1=正确，2=错误）',
+  `score` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '分值',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 35 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of judge_question
+-- ----------------------------
+INSERT INTO `judge_question` VALUES (21, '20211226214917039', '线程支持的操作系统中调度和资源分配均以线程为单位', '2', '2', '', '2022-01-06 19:51:11', '', NULL, NULL);
+INSERT INTO `judge_question` VALUES (22, '20211226214917039', '实时操作系统中会出现某个进程的工作请求不能及时完成的情况', '2', '2', '', '2022-01-06 19:52:48', '', NULL, NULL);
+INSERT INTO `judge_question` VALUES (23, '20211226214917039', '多级反馈队列调度算法是一种动态优先权优先算法', '2', '2', '', '2022-01-06 19:56:53', '', NULL, NULL);
+INSERT INTO `judge_question` VALUES (24, '20211226214917039', '若系统中存在一个循环等待的进程集合，则必会死锁', '2', '2', '', '2022-01-06 20:00:26', '', NULL, NULL);
+INSERT INTO `judge_question` VALUES (32, '20211226214946554', '数据元素是数据的最小单位', '2', '2', '', '2022-02-12 19:42:19', '', NULL, NULL);
+INSERT INTO `judge_question` VALUES (33, '20211226214946554', '一个数据结构是由一个逻辑结构和这个逻辑结构上的一个基本运算集构成的整体', '2', '2', '', '2022-02-12 19:42:34', '', NULL, NULL);
+INSERT INTO `judge_question` VALUES (34, '20211226214946554', '数据的存储结构是数据元素之间的逻辑关系和逻辑结构在计算机存储器内的映像', '2', '2', '', '2022-02-12 19:42:49', '', NULL, NULL);
+INSERT INTO `judge_question` VALUES (35, '20211226214946554', '数据的逻辑结构是描述数据元素之间的逻辑关系，它是依赖于计算机的', '2', '2', '', '2022-02-12 19:43:04', '', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for single_choice
+-- ----------------------------
+DROP TABLE IF EXISTS `single_choice`;
+CREATE TABLE `single_choice`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '单选题主键',
+  `pcode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目编码',
+  `question` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '问题',
+  `one` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '第一个选项',
+  `two` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '第二个选项',
+  `three` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '第三个选项',
+  `four` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '第四个选项',
+  `answer` int(10) NULL DEFAULT NULL COMMENT '参考答案（1=第一个选项，依次类推）',
+  `score` int(10) NULL DEFAULT NULL COMMENT '分值',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of single_choice
+-- ----------------------------
+INSERT INTO `single_choice` VALUES (2, '20211226214917039', '现代操作系统的两个基本特征是( )和资源共享', '多道程序设计 ', '中断处理', '程序的并发执行 ', '实现分时与实时', 1, 2, 'admin', '2022-01-03 21:05:04', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (3, '20211226214917039', '已经获得除( )以外的所有运行所需资源的进程处于就绪状态', '内存 ', 'I/O设备', 'CPU', '磁盘空间', 1, 2, 'admin', '2022-01-03 21:05:04', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (21, '20211226214917039', '一个进程被唤醒意味着', '该进程重新占有CPU', '进程状态变为就绪', '它的优先权变为最大', '该进程会立即执行', 1, 2, '', '2022-01-03 21:50:24', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (22, '20211226214917039', '在下列情况( )，一定要进行进程调度', '某一进程正在访问临界资源', '某一进程运行时因缺乏资源进入阻塞状态', '某一进程处于运行状态，而另一进程处于阻塞状态', '某一进程正在访问打印机，而另一进程处于就绪状态', 1, 2, '', '2022-01-03 21:51:30', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (23, '20211226214917039', '.Signal原语对信号量做运算后，( )', '当S<0时进程继续执行', '当S<0时要唤醒一个就绪进程', '当S≤0时要唤醒一个等待进程', '当S≤0 时要唤醒一个就绪进程', 1, 2, '', '2022-01-05 19:36:27', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (24, '20211226214917039', '下面关于安全状态和非安全状态说法正确的是( )', '安全状态是没有死锁的状态，非安全状态是有死锁的状态', '安全状态是可能有死锁的状态，非安全状态也可能有死锁状态', '安全状态是可能没有死锁的状态，非安装状态是有死锁的状态', '安全状态是没有死锁的状态，非安全状态可能有死锁的状态', 1, 2, '', '2022-01-05 19:36:51', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (27, '20211226214917039', '.设基址寄存器的内容为1000，执行指令\"LOAD A，2000\"时，操作数的地址是( )', '1000', '2000', '3000', '4000', 1, 2, '', '2022-01-09 14:27:09', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (29, '20211226214917039', '内存碎片是指( )', '存储分配完后所剩的空闲区', '没有被使用的存储区', '不能被使用的存储区', '未被使用，而又暂时不能使用的存储区', 1, 2, '', '2022-01-09 14:31:59', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (33, '20211226214917039', '.以下存储管理中，内存利用率最高的是（ ）', '段式  ', '页式', '固定分区 ', '段页式', 1, 2, '', '2022-01-13 19:36:19', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (34, '20211226214917039', '.段页式管理完成一次逻辑地址寻址并实现一个内存数据读取，访问( )次内存', '1', '2', '3', '4', 1, 2, '', '2022-01-13 19:36:50', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (36, '20211226214946554', '一个算法应该是（）', ' 程序  ', '问题求解步骤的描述     ', ' 要满足五个基本属性', 'A和C', 1, 2, '', '2022-02-12 19:34:59', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (37, '20211226214946554', '算法指的是（ ）', '计算机程序      ', '解决问题的计算方法', '排序算法  ', '解决问题的有限运算序列', 1, 2, '', '2022-02-12 19:35:57', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (38, '20211226214946554', '与数据元素本身的形式、内容、相对位置、个数无关的是数据的（ ）', '存储结构', '逻辑结构 ', '算法   ', '操作', 1, 2, '', '2022-02-12 19:36:55', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (39, '20211226214946554', '数据的基本单位是', '数据项   ', '数据类型    ', '数据元素 ', '数据变量', 1, 2, '', '2022-02-12 19:37:44', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (40, '20211226214946554', '循环链表中当前结点的后继和前驱的时间复杂度分别是', 'O(n)和O(1) ', 'O(1)和O(1)    ', 'O(1)和O(n)   ', 'O(n)和O(n)', 1, 2, '', '2022-02-12 19:38:43', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (41, '20211226215109913', '111', '111', '111', '11', '11', 1, 2, '', '2022-02-12 21:48:17', '', NULL, NULL);
+INSERT INTO `single_choice` VALUES (42, '20211226215109913', '1555', '515', '25', '55', '55', 1, 2, '', '2022-02-12 21:48:35', '', NULL, NULL);
+
+-- ----------------------------
+-- Table structure for subject
+-- ----------------------------
+DROP TABLE IF EXISTS `subject`;
+CREATE TABLE `subject`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '科目表主键',
+  `code` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目编码',
+  `usercode` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户编码',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目名称',
+  `content` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '科目介绍',
+  `create_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '创建者',
+  `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
+  `update_by` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '' COMMENT '更新者',
+  `update_time` datetime(0) NULL DEFAULT NULL COMMENT '更新时间',
+  `remark` varchar(500) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of subject
+-- ----------------------------
+INSERT INTO `subject` VALUES (20, '20211226214917039', '20211226144207859', '操作系统', '操作系统', '', '2021-12-26 21:49:17', '', NULL, NULL);
+INSERT INTO `subject` VALUES (21, '20211226214946554', '20211226144207859', '数据结构', '数据结构', '', '2021-12-26 21:49:46', '', NULL, NULL);
+INSERT INTO `subject` VALUES (22, '20211226215004568', '20211226144650434', '计算机网络', '计算机网络', '', '2021-12-26 21:50:04', '', NULL, NULL);
+INSERT INTO `subject` VALUES (23, '20211226215017103', '20211226144650434', '组成原理', '组成原理', '', '2021-12-26 21:50:17', '', NULL, NULL);
+INSERT INTO `subject` VALUES (24, '20211226215032911', '20211226144650434', '软件工程', '软件工程', '', '2021-12-26 21:50:32', '', NULL, NULL);
+INSERT INTO `subject` VALUES (25, '20211226215109913', '20211226144515124', 'JAVA语言', 'JAVA语言', '', '2021-12-26 21:51:09', '', NULL, NULL);
+INSERT INTO `subject` VALUES (26, '20211226215127608', '20211226144515124', '编译原理', '编译原理', '', '2021-12-26 21:51:27', '', NULL, NULL);
+INSERT INTO `subject` VALUES (27, '20211226215242626', '20211226144515124', '算法设计', '算法设计', '', '2021-12-26 21:52:42', '', NULL, NULL);
+INSERT INTO `subject` VALUES (43, '20220312134552059', '20211226144028570', '6666', '6666', '', '2022-03-12 13:45:52', '', NULL, NULL);
+INSERT INTO `subject` VALUES (47, '20220313211421969', '20211226144207859', '66', '66', '', '2022-03-13 21:14:21', '', NULL, NULL);
+
+SET FOREIGN_KEY_CHECKS = 1;
